@@ -1,0 +1,19 @@
+<h1>Mongolian Words</h1>
+
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :GALIG_cont %>
+  <%= f.search_field :GALIG_cont %>
+
+  <%= f.submit %>
+<% end %>
+
+<p>所有词汇如下：</p>
+<ul>
+  <% @words.each do |word| %>
+  <li><%=link_to word.GALIG, word %></li>
+  <% end %>
+</ul>
+
+<%= paginate @words %>
+<%= @allc %>
